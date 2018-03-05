@@ -16,7 +16,7 @@ namespace Hrms1
         public Form1()
         {
             InitializeComponent();
-            //DatabaseConfiguration data = new DatabaseConfiguration();
+            DatabaseConfiguration database = new DatabaseConfiguration();
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -16,7 +16,7 @@ namespace Config
         /// </summary>
         private string ConnectionString;
         private MySqlConnection connection;
-
+        private string DataBaseName;
         /// <summary>
         /// DatabaseConnection Constructor
         /// </summary>
@@ -26,22 +26,29 @@ namespace Config
 
         }
 
+       
 
         /// <summary>
         /// Initializing the connection
         /// </summary>
-        private void Initialize()
+        public void Initialize()
         {
+            //setting connection string
             ConnectionString = ConfigurationManager.ConnectionStrings["myDatabaseConnection"].ConnectionString;
             connection = new MySqlConnection(ConnectionString);
-            
+
+            //getting the Database Name from App.Config 
+            System.Data.SqlClient.SqlConnectionStringBuilder builder = new System.Data.SqlClient.SqlConnectionStringBuilder(ConnectionString);
+            this.DataBaseName = builder.InitialCatalog;
         }
+
+        
 
         /// <summary>
         /// Checking if Connection is open or not
         /// </summary>
         /// <returns></returns>
-        private bool OpenConnection()
+        public bool OpenConnection()
         {
             try
             {
@@ -73,7 +80,7 @@ namespace Config
         /// </summary>
         /// <returns></returns>
 
-        private bool CloseConnection()
+        public bool CloseConnection()
         {
             try
             {
@@ -97,7 +104,7 @@ namespace Config
         /// <example>string[] myFields = new string[]{"asdf","aklsdjf"};</example>
         /// string[] myTypes = new string[]{"int", "varchar(20)"};
         /// DatabaseConnection.CreateTable("asjdfkl",myFields, myTypes);
-        private void CreateTable(string tableName, string[] fieldNames, string[] dataTypes)
+        public void CreateTable(string tableName, string[] fieldNames, string[] dataTypes)
         {
             if (this.OpenConnection() == true)
             {
@@ -125,7 +132,7 @@ namespace Config
         /// <param name="tableName"></param>
         /// <param name="fieldNames"></param>/
         /// <param name="values"></param>
-        private void AddToTable(string tableName, string[] fieldNames, string[] values)
+        public void AddToTable(string tableName, string[] fieldNames, string[] values)
         {
             if (this.OpenConnection() == true)
             {
@@ -153,6 +160,35 @@ namespace Config
             }
             
             this.CloseConnection();
+        }
+
+
+
+        /// <summary>
+        /// Checks if the table exists or not.  
+        /// Returns 0 or more than 0.
+        /// If returns more than 0 then Table exists
+        /// </summary>
+        /// <example>if(CheckTableExists > 0) 
+        /// Table exists 
+        ///else
+        ///Table doesnot exists
+        ///</example>
+        /// <param name="tableName"></param>
+        /// <returns></returns>
+        public int CheckTableExists(string tableName)
+        {
+            //Initializing Count as -1 
+            int Count = -1;
+            if (this.OpenConnection() == true)
+            {
+                string myQuery = "SELECT count(*) FROM information_schema.TABLES WHERE (TABLE_SCHEMA = '" + this.DataBaseName + "') AND (TABLE_NAME = '" + tableName + "')";
+                MySqlCommand cmd = new MySqlCommand(myQuery, connection);
+                Count = int.Parse(cmd.ExecuteScalar() + "");
+            }
+            
+            this.CloseConnection();
+            return Count;
         }
 
        
