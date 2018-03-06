@@ -30,3 +30,6 @@ C:\Users\Manz\Desktop\HRMS\Hrms1\obj\Debug\Hrms1.csprojResolveAssemblyReference.
 C:\Users\Manz\Desktop\HRMS\Hrms1\obj\Debug\Hrms1.Form1.resources
 C:\Users\Manz\Desktop\HRMS\Hrms1\obj\Debug\Hrms1.Properties.Resources.resources
 C:\Users\Manz\Desktop\HRMS\Hrms1\obj\Debug\Hrms1.csproj.GenerateResource.Cache
+C:\Users\Manz\Desktop\HRMS\Hrms1\bin\Debug\MaterialSkin.dll
+C:\Users\Manz\Desktop\HRMS\Hrms1\obj\Debug\Hrms1.Login.resources
+C:\Users\Manz\Desktop\HRMS\Hrms1\bin\Debug\MetroFramework.dll
