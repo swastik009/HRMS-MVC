@@ -1,7 +1,10 @@
 # KIST HRMS
-FrontEnd
 
-Minor changes to be dealt with:
-Password char
-Deselection of Email Address text box on form Load.
-others
+3rd Semester C# project by implementing own MVC 
+
+Done by:
+Swastik Thapaliya
+Subin Shrestha.
+
+Instructor:
+Anaya Upadhayay
