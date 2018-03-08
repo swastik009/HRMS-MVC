@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 using Config;
 namespace Hrms1.Models
 {
-  
-  
 
-  
-class Employees
+
+
+    public enum Gender { male, female, others };
+
+    class Employees
     {
         /// <summary>
         /// variables for employees
@@ -20,7 +21,7 @@ class Employees
         public string _first_name { get; set; }
         public string _last_name { get; set; }
         public string _birth_date { get; set; }
-        public enum Gender {male,female,others};
+        
         public Gender _gender { get; set; }
         public string _hire_date { get; set; }
 
