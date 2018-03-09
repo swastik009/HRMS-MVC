@@ -32,11 +32,6 @@ namespace Hrms1
 
         }
 
-        private void btnClose_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void txtEmail_Enter(object sender, EventArgs e)
         {
             if (txtEmail.Text == "Email address")
@@ -69,6 +64,23 @@ namespace Hrms1
         private void txtPassword_OnValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void imgLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            SignUp m = new SignUp();
+            m.Show();
         }
 
     }
