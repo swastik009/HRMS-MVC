@@ -46,6 +46,7 @@
             this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
             this.materialRadioButton3 = new MaterialSkin.Controls.MaterialRadioButton();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnSignUp = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
@@ -113,8 +114,8 @@
             this.bunifuDatepicker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(148)))), ((int)(((byte)(226)))));
             this.bunifuDatepicker1.BorderRadius = 0;
             this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.bunifuDatepicker1.FormatCustom = null;
+            this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.bunifuDatepicker1.FormatCustom = "yyyy-MM-dd";
             this.bunifuDatepicker1.Location = new System.Drawing.Point(133, 257);
             this.bunifuDatepicker1.Name = "bunifuDatepicker1";
             this.bunifuDatepicker1.Size = new System.Drawing.Size(278, 31);
@@ -251,11 +252,49 @@
             this.btnClose.Zoom = 10;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnSignUp
+            // 
+            this.btnSignUp.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(148)))), ((int)(((byte)(226)))));
+            this.btnSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(147)))), ((int)(((byte)(227)))));
+            this.btnSignUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSignUp.BorderRadius = 0;
+            this.btnSignUp.ButtonText = "Sign Up";
+            this.btnSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSignUp.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
+            this.btnSignUp.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignUp.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSignUp.Iconimage = null;
+            this.btnSignUp.Iconimage_right = null;
+            this.btnSignUp.Iconimage_right_Selected = null;
+            this.btnSignUp.Iconimage_Selected = null;
+            this.btnSignUp.IconMarginLeft = 0;
+            this.btnSignUp.IconMarginRight = 0;
+            this.btnSignUp.IconRightVisible = true;
+            this.btnSignUp.IconRightZoom = 0D;
+            this.btnSignUp.IconVisible = true;
+            this.btnSignUp.IconZoom = 90D;
+            this.btnSignUp.IsTab = false;
+            this.btnSignUp.Location = new System.Drawing.Point(182, 345);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(147)))), ((int)(((byte)(227)))));
+            this.btnSignUp.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(148)))), ((int)(((byte)(226)))));
+            this.btnSignUp.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSignUp.selected = false;
+            this.btnSignUp.Size = new System.Drawing.Size(90, 29);
+            this.btnSignUp.TabIndex = 38;
+            this.btnSignUp.Text = "Sign Up";
+            this.btnSignUp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSignUp.Textcolor = System.Drawing.Color.White;
+            this.btnSignUp.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 445);
+            this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.materialRadioButton3);
             this.Controls.Add(this.materialRadioButton2);
@@ -300,5 +339,6 @@
         private System.Windows.Forms.Label label5;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField3;
         private Bunifu.Framework.UI.BunifuImageButton btnClose;
+        private Bunifu.Framework.UI.BunifuFlatButton btnSignUp;
     }
 }

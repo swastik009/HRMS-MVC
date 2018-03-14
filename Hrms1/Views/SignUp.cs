@@ -21,5 +21,11 @@ namespace Hrms1
         {
             this.Close();
         }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            SuccessDialog m = new SuccessDialog();
+            m.Show();
+        }
     }
 }
