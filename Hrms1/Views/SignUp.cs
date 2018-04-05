@@ -19,13 +19,13 @@ namespace Hrms1
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             SuccessDialog m = new SuccessDialog();
-            m.Show();
+            m.ShowDialog();
         }
     }
 }

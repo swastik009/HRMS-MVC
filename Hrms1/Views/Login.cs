@@ -24,7 +24,7 @@ namespace Hrms1
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void txtEmail_MouseClick(object sender, MouseEventArgs e)
@@ -73,7 +73,9 @@ namespace Hrms1
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            
+            Dashboard m = new Dashboard();
+            m.Show();
+            this.Hide();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

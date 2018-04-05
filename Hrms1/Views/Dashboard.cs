@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Hrms1
 {
-    public partial class SuccessDialog : Form
+    public partial class Dashboard : Form
     {
-        public SuccessDialog()
+        public Dashboard()
         {
             InitializeComponent();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

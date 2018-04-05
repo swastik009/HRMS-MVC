@@ -63,16 +63,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\DatabaseConfiguration.cs" />
+    <Compile Include="Views\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="SuccessDialog.cs">
+    <Compile Include="Views\SuccessDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SuccessDialog.Designer.cs">
+    <Compile Include="Views\SuccessDialog.Designer.cs">
       <DependentUpon>SuccessDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.cs">
@@ -91,10 +97,13 @@
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\IEmployeesView.cs" />
+    <EmbeddedResource Include="Views\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SuccessDialog.resx">
+    <EmbeddedResource Include="Views\SuccessDialog.resx">
       <DependentUpon>SuccessDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
