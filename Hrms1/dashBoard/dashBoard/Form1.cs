@@ -7,21 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Config;
 
-namespace Hrms1
+namespace dashBoard
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-            DatabaseConfiguration database = new DatabaseConfiguration();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -4,7 +4,6 @@ C:\HRMS\Hrms1\Hrms1\bin\Debug\Hrms1.pdb
 C:\HRMS\Hrms1\Hrms1\bin\Debug\MySql.Data.dll
 C:\HRMS\Hrms1\Hrms1\bin\Debug\MySql.Data.xml
 C:\HRMS\Hrms1\Hrms1\obj\Debug\Hrms1.csprojResolveAssemblyReference.cache
-C:\HRMS\Hrms1\Hrms1\obj\Debug\Hrms1.Form1.resources
 C:\HRMS\Hrms1\Hrms1\obj\Debug\Hrms1.Properties.Resources.resources
 C:\HRMS\Hrms1\Hrms1\obj\Debug\Hrms1.csproj.GenerateResource.Cache
 C:\HRMS\Hrms1\Hrms1\obj\Debug\Hrms1.csproj.CoreCompileInputs.cache
@@ -33,3 +32,6 @@ C:\Users\Manz\Desktop\HRMS\Hrms1\obj\Debug\Hrms1.csproj.GenerateResource.Cache
 C:\Users\Manz\Desktop\HRMS\Hrms1\bin\Debug\MaterialSkin.dll
 C:\Users\Manz\Desktop\HRMS\Hrms1\obj\Debug\Hrms1.Login.resources
 C:\Users\Manz\Desktop\HRMS\Hrms1\bin\Debug\MetroFramework.dll
+C:\HRMS\Hrms1\Hrms1\obj\Debug\Hrms1.Login.resources
+C:\HRMS\Hrms1\Hrms1\bin\Debug\MetroFramework.dll
+C:\HRMS\Hrms1\Hrms1\obj\Debug\Hrms1.SignUp.resources

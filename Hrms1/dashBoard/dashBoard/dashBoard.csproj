@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B8B75DCD-042B-42F0-BBB9-5D83CC12DAEF}</ProjectGuid>
+    <ProjectGuid>{98B2388E-B384-4AF0-A63E-50E2645A97B0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Hrms1</RootNamespace>
-    <AssemblyName>Hrms1</AssemblyName>
+    <RootNamespace>dashBoard</RootNamespace>
+    <AssemblyName>dashBoard</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,25 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\Bunifu_UI_v1.5.3.dll</HintPath>
-    </Reference>
-    <Reference Include="MaterialSkin">
-      <HintPath>..\..\..\Documents\Visual Studio 2012\Projects\HotelManagement\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroFramework">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.11\Assemblies\v4.5\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,38 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\DepartmentController.cs" />
-    <Compile Include="Controllers\DepartmentEmployeeController.cs" />
-    <Compile Include="Controllers\DepartmentManagerController.cs" />
-    <Compile Include="Controllers\EmployeesController.cs" />
-    <Compile Include="Controllers\signInController.cs" />
-    <Compile Include="CreateTable.cs" />
-    <Compile Include="CreateTableTemp.cs" />
-    <Compile Include="Models\Department.cs" />
-    <Compile Include="Models\DepartmentEmployee.cs" />
-    <Compile Include="Models\DepartmentManager.cs" />
-    <Compile Include="Configuration\ConfigRepo.cs" />
-    <Compile Include="Models\Repositories\EmployeesRepo.cs" />
-    <Compile Include="Models\Validations\EmployeeValidation.cs" />
-    <Compile Include="Validation.cs" />
-    <Compile Include="Views\Login.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Employee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\SignUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\SignUp.Designer.cs">
-      <DependentUpon>SignUp.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Views\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -103,10 +62,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\SignUp.resx">
-      <DependentUpon>SignUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -118,13 +73,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="MetroFramework.txt" />
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

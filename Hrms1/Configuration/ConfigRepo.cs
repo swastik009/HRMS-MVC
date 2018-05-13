@@ -2,25 +2,28 @@
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Data;
 
-namespace Config
+
+namespace Configuration
 {
-    public class DatabaseConfiguration
+    public class ConfigRepo
     {
         
        
       
             
         /// <summary>
-        ///  DONOT MODIFY AFTER THIS!!
+        /// THIS IS AN ABSTRACT CLASS, DONOT MODIFY AFTER THIS!!
         /// </summary>
-        private string ConnectionString;
-        private MySqlConnection connection;
-        private string DataBaseName;
+        protected string ConnectionString;
+        protected MySqlConnection connection;
+        protected string DataBaseName;
+       
         /// <summary>
         /// DatabaseConnection Constructor
         /// </summary>
-        public DatabaseConfiguration()
+        public ConfigRepo()
         {
             Initialize();
 
@@ -35,7 +38,7 @@ namespace Config
         {
             //setting connection string
             ConnectionString = ConfigurationManager.ConnectionStrings["myDatabaseConnection"].ConnectionString;
-            connection = new MySqlConnection(ConnectionString);
+            this.connection = new MySqlConnection(ConnectionString);
 
             //getting the Database Name from App.Config 
             System.Data.SqlClient.SqlConnectionStringBuilder builder = new System.Data.SqlClient.SqlConnectionStringBuilder(ConnectionString);
@@ -118,8 +121,8 @@ namespace Config
                         myQuery += ", " + fieldNames[i] + " " + dataTypes[i];
                 }
                 myQuery += ")";
-                MySqlCommand cmd = new MySqlCommand(myQuery, connection);
-                cmd.ExecuteNonQuery();
+
+                QueryExecuter(myQuery).ExecuteNonQuery();
                 this.CloseConnection();
             }
 
@@ -155,8 +158,8 @@ namespace Config
                         myQuery += ", '" + values[i] + "'";
                 }
                 myQuery += ");";
-                MySqlCommand cmd = new MySqlCommand(myQuery, connection);
-                cmd.ExecuteNonQuery();
+                
+                QueryExecuter(myQuery).ExecuteNonQuery();
             }
             
             this.CloseConnection();
@@ -179,20 +182,100 @@ namespace Config
         public int CheckTableExists(string tableName)
         {
             //Initializing Count as -1 
-            int Count = -1;
+            int count = -1;
             if (this.OpenConnection() == true)
             {
                 string myQuery = "SELECT count(*) FROM information_schema.TABLES WHERE (TABLE_SCHEMA = '" + this.DataBaseName + "') AND (TABLE_NAME = '" + tableName + "')";
-                MySqlCommand cmd = new MySqlCommand(myQuery, connection);
-                Count = int.Parse(cmd.ExecuteScalar() + "");
+                
+                count = int.Parse(QueryExecuter(myQuery).ExecuteScalar() + "");
             }
             
+            this.CloseConnection();
+            return count;
+        }
+
+
+        /// <summary>
+        /// Authenticates email and password exists in particular table
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+
+        public int checkLoginAuth(string tableName, string email, string password)
+        {
+            int count = -1;
+            if(this.OpenConnection() == true)
+            {
+                string myQuery = "SELECT count(*) FROM " + tableName + " WHERE (email = '" + email + "' AND password = '" + password + "');";
+                count = int.Parse(QueryExecuter(myQuery).ExecuteScalar() + "");
+                //MessageBox.Show(count.ToString());
+            }
+            this.CloseConnection();
+            return count;
+
+        }
+
+        /// <summary>
+        /// Checks whether given email address is admin or not
+        /// </summary>
+        /// <param name="emp_no"></param>
+        /// <param name="dept_no"></param>
+        /// <param name="tableName"></param>
+        /// <param name="tableName1"></param>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public bool checkAdmin(string mainTable, string tableName1, string tableName2,string email)
+        {
+            
+            string holder = null;
+            string myQuery= "SELECT dept_name FROM " +mainTable+" de INNER JOIN " +tableName1+ " e ON de.emp_no = e.emp_no INNER JOIN " +tableName2+ " d ON de.dept_no = d.dept_no WHERE e.email = '"+email+"'";
+
+            if (this.OpenConnection() == true)
+
+                
+            {
+                var reader = QueryExecuter(myQuery).ExecuteReader();
+                if (reader.Read())
+                    holder = reader["dept_name"].ToString();
+                    this.CloseConnection();
+               
+            }
+
+            if (holder == "Admin")
+                return true;
+            else
+                return false;
+
+        }
+       
+        public int CheckDataExist(string table)
+        {
+            int Count = -1;
+
+            if (this.OpenConnection() == true)
+            {
+                string myQuery = "SELECT count(*) FROM " + table;
+                
+                Count = int.Parse(QueryExecuter(myQuery).ExecuteScalar() + "");
+            }
             this.CloseConnection();
             return Count;
         }
 
-       
+        /// <summary>
+        /// QueryExecuter is to execute the query
+        /// </summary>
+        /// <param name="myQuery"></param>
+        /// <returns></returns>
+        public MySqlCommand QueryExecuter (string myQuery)
+        {
+            MySqlCommand cmd = new MySqlCommand(myQuery, this.connection);
+            return cmd;
+        }
 
+        
 
     }
 
