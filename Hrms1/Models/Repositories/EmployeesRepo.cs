@@ -52,8 +52,7 @@ namespace Hrms1.Models.Repositories
                 if (reader.Read())
                 {
                     dept_holder = reader["dept_no"].ToString();
-                    MessageBox.Show(dept_holder);
-                }
+                                   }
             }
             this.CloseConnection();
 

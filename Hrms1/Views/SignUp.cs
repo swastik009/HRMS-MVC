@@ -38,9 +38,12 @@ namespace Hrms1
             else if (OthersBtn.Checked == true)
                 genderHolder = OthersBtn.Text;
 
+            Login log = new Login();
             EmployeesController employeesController = new EmployeesController();
             employeesController.Create(firstName.Text, lastName.Text,this.birthDate.Text, genderHolder.ToLower(),hireDate.Text,password.Text,emailAddr.Text);
+
             this.Hide();
+            log.Show();
 
             }
     

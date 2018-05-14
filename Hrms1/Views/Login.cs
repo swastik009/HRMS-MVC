@@ -94,6 +94,7 @@ namespace Hrms1
         private void getANewID(object sender, EventArgs e)
         {
             SignUp signup = new SignUp();
+            this.Hide();
             signup.ShowDialog();
 
         }

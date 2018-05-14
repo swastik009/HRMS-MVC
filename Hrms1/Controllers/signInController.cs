@@ -13,10 +13,11 @@ namespace Hrms1.Controllers
      
         public void LoginAuth(string email, string password)
         {
+            Dashboard dash = new Dashboard();
             if (checkLoginAuth("employees", email, password) >= 1)
             {
                 if (checkAdmin("dept_emp", "employees", "departments", email) == true)
-                    MessageBox.Show("Show Admin Page");
+                    dash.Show();
                 else
                     MessageBox.Show("Show User Page");               
             }

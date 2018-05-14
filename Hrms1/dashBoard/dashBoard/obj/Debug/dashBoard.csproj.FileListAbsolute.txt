@@ -1,0 +1,8 @@
+C:\HRMS\Hrms1\Hrms1\dashBoard\dashBoard\bin\Debug\dashBoard.exe.config
+C:\HRMS\Hrms1\Hrms1\dashBoard\dashBoard\bin\Debug\dashBoard.exe
+C:\HRMS\Hrms1\Hrms1\dashBoard\dashBoard\bin\Debug\dashBoard.pdb
+C:\HRMS\Hrms1\Hrms1\dashBoard\dashBoard\obj\Debug\dashBoard.Properties.Resources.resources
+C:\HRMS\Hrms1\Hrms1\dashBoard\dashBoard\obj\Debug\dashBoard.csproj.GenerateResource.Cache
+C:\HRMS\Hrms1\Hrms1\dashBoard\dashBoard\obj\Debug\dashBoard.csproj.CoreCompileInputs.cache
+C:\HRMS\Hrms1\Hrms1\dashBoard\dashBoard\obj\Debug\dashBoard.exe
+C:\HRMS\Hrms1\Hrms1\dashBoard\dashBoard\obj\Debug\dashBoard.pdb

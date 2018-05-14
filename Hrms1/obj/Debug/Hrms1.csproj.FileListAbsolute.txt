@@ -35,3 +35,4 @@ C:\Users\Manz\Desktop\HRMS\Hrms1\bin\Debug\MetroFramework.dll
 C:\HRMS\Hrms1\Hrms1\obj\Debug\Hrms1.Login.resources
 C:\HRMS\Hrms1\Hrms1\bin\Debug\MetroFramework.dll
 C:\HRMS\Hrms1\Hrms1\obj\Debug\Hrms1.SignUp.resources
+C:\HRMS\Hrms1\Hrms1\obj\Debug\Hrms1.Dashboard.resources
