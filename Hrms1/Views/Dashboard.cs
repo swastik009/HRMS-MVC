@@ -26,5 +26,34 @@ namespace Hrms1
         {
             Application.Exit();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblClock.Text = DateTime.Now.ToLongTimeString();
+            lblDay.Text = DateTime.Now.DayOfWeek.ToString();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Login m = new Login();
+            m.Show();
+            Hide();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            if(sidebar.Width==50)
+            {
+                sidebar.Visible = false;
+                sidebar.Width = 244;
+                animator.ShowSync(sidebar);
+            }
+            else
+            {
+                sidebar.Visible = false;
+                sidebar.Width = 50;
+                animator.ShowSync(sidebar);
+            }
+        }
     }
 }

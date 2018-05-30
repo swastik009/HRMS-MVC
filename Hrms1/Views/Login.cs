@@ -16,6 +16,8 @@ namespace Hrms1
     {
         public Login()
         {
+           
+            
             InitializeComponent();
             
             Checker();
@@ -94,8 +96,11 @@ namespace Hrms1
         private void getANewID(object sender, EventArgs e)
         {
             SignUp signup = new SignUp();
+
             this.Hide();
-            signup.ShowDialog();
+            signup.Closed += (s, args) => this.Close();
+            signup.Show();
+
 
         }
 
